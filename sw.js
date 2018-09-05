@@ -39,11 +39,9 @@ self.addEventListener('install', e => {
 				return cache.addAll(urlsToCache)
 					.then(() => {
 						self.skipWaiting();
-					})
-					.catch(err => {
-						console.log('No se ha registrado el cache', err);
-					})
+					});
 			})
+			.catch(err => console.log('No se ha registrado el cache', err))
 	);
 
 });
